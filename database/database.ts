@@ -1,20 +1,20 @@
-import  { connect } from 'mongoose'
+import { connect } from 'mongoose'
 
 
 
-const db = async() => {
-const host=process.env.HOST || 'mongodb+srv://juaco:juacox2123@transporte.uaq2h.mongodb.net/apuntes';
+const db = async () => {
+    const host = process.env.HOST || 'mongodb+srv://juaco:juacox2123@transporte.uaq2h.mongodb.net/usuario';
     try {
-        await connect( host, {
-        /** useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-            useFindAndModify: false */
-        },()=>{
-        console.log('Base de datos online');
-        
-    });
-    
+        await connect(host, {
+            /** useNewUrlParser: true,
+                useUnifiedTopology: true,
+                useCreateIndex: true,
+                useFindAndModify: false */
+        }, () => {
+            console.log('Base de datos online');
+
+        });
+
 
     } catch (error) {
         console.log(error);

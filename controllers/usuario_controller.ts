@@ -33,15 +33,13 @@ export const postUsuario = async (req: Request, res: Response) => {
 
         await apunteModel.save();
         res.json({
-            ok: true,
-            token: '',
+
             mensaje: "se ha guardado el Usuario",
         });
     } catch (error) {
 
         res.status(500).json({
-            ok: false,
-            token: '',
+
             mensaje: "ha ocurrido un error"
         });
 
@@ -56,8 +54,7 @@ export const putUsuario = async (req: Request, res: Response) => {
         const apunte = await UsuarioModel.findByIdAndUpdate(id, resto);
         if (!apunte) {
             return res.status(404).json({
-                ok: false,
-                token: '',
+
                 mensaje: 'el Usuario no existe' + id,
 
             });
@@ -66,8 +63,7 @@ export const putUsuario = async (req: Request, res: Response) => {
 
     } catch (error) {
         res.status(500).json({
-            ok: false,
-            token: '',
+
             mensaje: 'Hable con el administrador'
         })
     }
@@ -81,14 +77,12 @@ export const deleteUsuario = async (req: Request, res: Response) => {
     const apunte = await UsuarioModel.findByIdAndDelete(id);
     if (!apunte) {
         return res.json({
-            ok: false,
-            token: '',
+
             mensaje: 'No existe el Usuario  ' + id
         });
     }
     res.json({
-        ok: true,
-        token: '',
+
         mensaje: "se ha borrado el Usuario",
     });
 }

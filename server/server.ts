@@ -71,7 +71,7 @@ export default class Server {
         this.app.use(this.apiPatch.usuarios, usuariosRoute);
 
         this.app.get('*', (req: Request, res: Response) => {
-            res.sendFile(path.resolve(__dirname, 'public/index.html'));
+            res.sendFile(path.resolve(__dirname, '../../public/index.html'));
         });
     }
     listen() {
