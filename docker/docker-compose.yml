@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  api_rest_node:
+    image: api_rest_node  
+    container_name: api_rest_node  
+    hostname: api_rest_node  
+    ports:
+      - "80:80"  
+    restart: unless-stopped  
